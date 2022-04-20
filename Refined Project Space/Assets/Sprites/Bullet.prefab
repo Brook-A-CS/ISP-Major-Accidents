@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2783751780872701657}
   - component: {fileID: 7359416047693408439}
   - component: {fileID: 7341241519543891887}
-  - component: {fileID: 5161600018719582062}
-  m_Layer: 0
+  - component: {fileID: 3196793069134906397}
+  - component: {fileID: 8815558480076927154}
+  - component: {fileID: 138758484356540845}
+  m_Layer: 6
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 6530179738444782934, guid: 2e36e8a6856bd5340be81771198cc063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5161600018719582062
+--- !u!114 &3196793069134906397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +133,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 7319092158467611863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd89a8193dda1c4f82d3cf167fdf61f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d43b67d521702d41902a70f00fd9f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rb: {fileID: 7359416047693408439}
-  damage: 40
+  health: 1
+  invlunPeriod: 0
+--- !u!114 &8815558480076927154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319092158467611863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b426d5e67bccc4c8dd0c6426cf5403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &138758484356540845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319092158467611863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64a1eaf23442a4c993fb27815211ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
