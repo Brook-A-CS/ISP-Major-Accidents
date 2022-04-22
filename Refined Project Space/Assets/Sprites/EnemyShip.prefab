@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7604953049626776460}
   - component: {fileID: 7604953049626776461}
   - component: {fileID: 1089081107}
+  - component: {fileID: -8561405431270470330}
   m_Layer: 7
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  invlunPeriod: 0
+  invulnPeriod: 0
 --- !u!114 &7604953049626776460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,3 +329,18 @@ PolygonCollider2D:
       - {x: -0.2625, y: -1.0575}
       - {x: -0.24249999, y: -1.0124999}
       - {x: -0.2375, y: -0.9625}
+--- !u!114 &-8561405431270470330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604953049626776454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba8d886ef8a3bd40a8598e91e959e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletOffset: {x: 0, y: 0.5, z: 0}
+  bulletPrefab: {fileID: 5995644332521011262, guid: 7a35af8112b852a459a87bd14ff14aac, type: 3}
+  fireDelay: 0.5

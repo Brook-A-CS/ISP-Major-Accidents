@@ -6,8 +6,14 @@ public class PlayerShooting : MonoBehaviour {
     
     public Transform GunSpot;
     public GameObject bulletPrefab;
+    int bulletLayer;
+
     public float fireDelay = 0.25f;
     float cooldownTimer = 0;
+
+    void Start() {
+        bulletLayer = gameObject.layer;
+    }
 
     // Update is called once per frame
     void Update() {
@@ -19,7 +25,7 @@ public class PlayerShooting : MonoBehaviour {
             cooldownTimer = fireDelay;
 
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, GunSpot.position, GunSpot.rotation);
-            bulletGO.layer = gameObject.layer;
+            bulletGO.layer = bulletLayer;
         }
     }
 }

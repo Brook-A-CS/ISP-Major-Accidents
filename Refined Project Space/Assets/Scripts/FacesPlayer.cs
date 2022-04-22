@@ -11,7 +11,7 @@ public class FacesPlayer : MonoBehaviour {
     void Update() {
         if(player == null) {
             // Find the players Ship
-            GameObject go = GameObject.Find("PlayerShip");
+            GameObject go = GameObject.FindWithTag ("Player");
 
             if(go != null) {
                 player = go.transform;
