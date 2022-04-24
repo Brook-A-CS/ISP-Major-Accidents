@@ -5,7 +5,12 @@ using UnityEngine;
 public class CamFollow : MonoBehaviour {
 
     public Transform myTarget;
+    //public PlayerSpawner script;
 
+    void Awake () 
+    {
+        myTarget = GameObject.Find("Playership(Clone)").transform;
+	}
     // Update is called once per frame
     void Update() {
         if(myTarget != null) {
