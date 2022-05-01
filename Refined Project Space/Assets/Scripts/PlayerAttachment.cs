@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttachment : MonoBehaviour
 {
     public Transform connectionPoint;
-    public GameObject connector;
+    public GameObject attachment;
 
     // Update is called once per frame
     void Update()
@@ -19,11 +19,12 @@ public class PlayerAttachment : MonoBehaviour
     void Place()
     {
         Vector3 connectionPointPosition = connectionPoint.position;
-        float size = connector.transform.localScale.x;
+        float size = attachment.transform.localScale.x;
 
-        GameObject newConnector = Instantiate(connector, new Vector3(connectionPointPosition.x + (size / 2),connectionPointPosition.y, connectionPointPosition.z ), connectionPoint.rotation);
+        //GameObject newAttachment = Instantiate(attachment, new Vector3(connectionPointPosition.x + (size / 2),connectionPointPosition.y, connectionPointPosition.z ), connectionPoint.rotation);
+        GameObject newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
-        newConnector.transform.SetParent(connectionPoint);
+        newAttachment.transform.SetParent(connectionPoint);
 
     }
 }
