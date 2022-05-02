@@ -24,10 +24,8 @@ public class PlayerAttachment : MonoBehaviour
         }
     }
 
-    void Place()
+    private void Place()
     {
-
-        
 
         Vector3 connectionPointPosition = connectionPoint.position;
         float size = attachment.transform.localScale.x;
