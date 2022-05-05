@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Click : MonoBehaviour
 {
-    public Transform connectionPoint;
+    private Transform connectionPoint;
     public GameObject attachment;
 
     void Start() 
     {
+        connectionPoint = this.gameObject.transform;
         Vector3 connectionPointPosition = connectionPoint.position;
         float size = attachment.transform.localScale.x;
         
