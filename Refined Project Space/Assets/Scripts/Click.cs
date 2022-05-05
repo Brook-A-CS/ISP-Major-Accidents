@@ -17,10 +17,10 @@ public class Click : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      Place();
+      //OnMouseDown();
     }
 
-    private void Place()
+    private void OnMouseDown()
     {
         //0 is left click; 1 is right
         if (Input.GetMouseButtonDown(0)) 
