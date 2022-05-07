@@ -11,7 +11,33 @@ public class Click : MonoBehaviour
 
     void Awake() 
     {
-        chooseAttachment = camera.GetComponent<ChooseAttachment>();
+        chooseAttachment = m_camera.GetComponent<ChooseAttachment>();
+    }
+
+    void Start()
+    {
+        
+    }
+
+    void Update() 
+    {
+        switchAttachment();
+    }
+
+    private void switchAttachment()
+    {
+        //Debug.Log(chooseAttachment.equiped);
+        switch (chooseAttachment.equiped)
+        {
+            case 1:
+                Debug.Log("1");
+                break;
+            case 2:
+                Debug.Log("2");
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnMouseDown()
