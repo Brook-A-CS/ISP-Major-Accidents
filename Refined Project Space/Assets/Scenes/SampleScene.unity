@@ -325,8 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242629fd65006144490aa1cf55a736b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionPoint: {fileID: 519261019}
-  attachment: {fileID: 3231285584977340699, guid: 521dfc0de6487874d9ef86360a9f9e8f, type: 3}
+  attachment: {fileID: 1815370263404747001, guid: 521dfc0de6487874d9ef86360a9f9e8f, type: 3}
 --- !u!50 &519261023
 Rigidbody2D:
   serializedVersion: 4

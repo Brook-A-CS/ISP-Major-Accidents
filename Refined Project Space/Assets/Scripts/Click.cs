@@ -6,19 +6,12 @@ public class Click : MonoBehaviour
 {
     private Transform connectionPoint;
     public GameObject attachment;
+    private ChooseAttachment chooseAttachment;
+    [SerializeField] GameObject m_camera;
 
-    void Start() 
+    void Awake() 
     {
-        connectionPoint = this.gameObject.transform;
-        Vector3 connectionPointPosition = connectionPoint.position;
-        float size = attachment.transform.localScale.x;
-        
-        connectionPoint.Translate(Vector3.right * size/2);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-      //OnMouseDown();
+        chooseAttachment = camera.GetComponent<ChooseAttachment>();
     }
 
     private void OnMouseDown()
@@ -26,12 +19,12 @@ public class Click : MonoBehaviour
         //0 is left click; 1 is right
         if (Input.GetMouseButtonDown(0)) 
         {
-            Vector3 connectionPointPosition = connectionPoint.position;
+            connectionPoint = this.gameObject.transform;
             float size = attachment.transform.localScale.x;
-            
-            //connectionPoint.Translate(Vector3.right * size/2);
+        
+            connectionPoint.Translate(Vector3.right * size/2);
+            Vector3 connectionPointPosition = connectionPoint.position;
 
-            //GameObject newAttachment = Instantiate(attachment, new Vector3(connectionPointPosition.x + (size / 2),connectionPointPosition.y, connectionPointPosition.z ), connectionPoint.rotation);
             GameObject newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
             newAttachment.transform.SetParent(connectionPoint);
