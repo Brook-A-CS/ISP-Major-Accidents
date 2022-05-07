@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Click : MonoBehaviour
 {
+     [SerializeField] GameObject m_camera;
     private Transform connectionPoint;
-    public GameObject attachment;
+    private GameObject attachment;
     private ChooseAttachment chooseAttachment;
-    [SerializeField] GameObject m_camera;
+    private int attachIndex;
 
     void Awake() 
     {
@@ -16,11 +17,11 @@ public class Click : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update() 
     {
+        attachment = GameObject.FindGameObjectsWithTag("Attachments")[attachIndex];
         switchAttachment();
     }
 
@@ -30,10 +31,12 @@ public class Click : MonoBehaviour
         switch (chooseAttachment.equiped)
         {
             case 1:
-                Debug.Log("1");
+                attachIndex = 0;
+                //Debug.Log("1");
                 break;
             case 2:
-                Debug.Log("2");
+                attachIndex = 1;
+                //Debug.Log("2");
                 break;
             default:
                 break;
