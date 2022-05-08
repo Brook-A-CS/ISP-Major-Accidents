@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Click : MonoBehaviour
 {
-     [SerializeField] GameObject m_camera;
+    private GameObject m_camera;
     private Transform connectionPoint;
     private GameObject attachment;
+    //gets var from global script 
     private ChooseAttachment chooseAttachment;
     private int attachIndex;
 
     void Awake() 
     {
+        m_camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
         chooseAttachment = m_camera.GetComponent<ChooseAttachment>();
     }
 
@@ -21,13 +23,24 @@ public class Click : MonoBehaviour
 
     void Update() 
     {
+        //array pos key: 
+        //0 = circle; 1 = rectangle
         attachment = GameObject.FindGameObjectsWithTag("Attachments")[attachIndex];
         switchAttachment();
     }
 
+    // void LateUpdate()
+    // {
+    //     if (placed)
+    //     {
+    //     Debug.Log(placed);
+    //     Destroy(this.gameObject);
+    //     }
+    // }
+
     private void switchAttachment()
     {
-        //Debug.Log(chooseAttachment.equiped);
+        //Debug.Log(chooseAttac hment.equiped);
         switch (chooseAttachment.equiped)
         {
             case 1:
@@ -57,6 +70,10 @@ public class Click : MonoBehaviour
             GameObject newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
             newAttachment.transform.SetParent(connectionPoint);
+
+            //placed = true;
+
         }
     }
+
 }
