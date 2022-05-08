@@ -11,6 +11,8 @@ public class Click : MonoBehaviour
     private ChooseAttachment chooseAttachment;
     private int attachIndex;
 
+    private bool placed;
+
     void Awake() 
     {
         m_camera = GameObject.FindGameObjectsWithTag("MainCamera")[0];
@@ -29,14 +31,6 @@ public class Click : MonoBehaviour
         switchAttachment();
     }
 
-    // void LateUpdate()
-    // {
-    //     if (placed)
-    //     {
-    //     Debug.Log(placed);
-    //     Destroy(this.gameObject);
-    //     }
-    // }
 
     private void switchAttachment()
     {
@@ -51,6 +45,9 @@ public class Click : MonoBehaviour
                 attachIndex = 1;
                 //Debug.Log("2");
                 break;
+            case 3:
+                attachIndex = 2;
+                break;
             default:
                 break;
         }
@@ -61,6 +58,8 @@ public class Click : MonoBehaviour
         //0 is left click; 1 is right
         if (Input.GetMouseButtonDown(0)) 
         {
+            if (!placed) 
+            {
             connectionPoint = this.gameObject.transform;
             float size = attachment.transform.localScale.x;
         
@@ -71,7 +70,8 @@ public class Click : MonoBehaviour
 
             newAttachment.transform.SetParent(connectionPoint);
 
-            //placed = true;
+            placed = true;
+            }
 
         }
     }
