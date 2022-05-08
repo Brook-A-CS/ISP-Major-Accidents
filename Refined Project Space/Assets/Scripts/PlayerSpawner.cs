@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : MonoBehaviour {
 
@@ -33,13 +34,30 @@ public class PlayerSpawner : MonoBehaviour {
 		}
 	}
 
+	 void Restart() {
+     //makes a GUI button at coordinates 10, 100, and a size of 200x40
+     if(GUI.Button(new Rect( Screen.width/2 - 50 , Screen.height/2 - 5, 100, 50),"Restart")) {
+        //Loads a level
+	   SceneManager.LoadScene("SampleScene");
+     }
+ }
+
+	void Back() {
+     //makes a GUI button at coordinates 10, 100, and a size of 200x40
+     if(GUI.Button(new Rect( Screen.width/2 - 50 , Screen.height/2 - -50, 100, 50),"Back")) {
+        //Loads a level
+	   SceneManager.LoadScene("Menu");
+     }
+ }
+
 	void OnGUI() {
 		if(numLives > 0 || playerInstance!= null) {
 			GUI.Label( new Rect(0, 0, 100, 50), "Lives Left: " + numLives);
 		}
 		else {
-			GUI.Label( new Rect( Screen.width/2 - 50 , Screen.height/2 - 25, 100, 50), "Game Over, Man!");
-
+			GUI.Label( new Rect( Screen.width/2 - 35 , Screen.height/2 - 25, 100, 50), "Game Over!");
+			Restart();
+			Back();
 		}
 	}
 }
