@@ -11,7 +11,7 @@ public class Click : MonoBehaviour
     private ChooseAttachment chooseAttachment;
     private int attachIndex;
 
-    private bool placed;
+    public bool placed;
 
     void Awake() 
     {
