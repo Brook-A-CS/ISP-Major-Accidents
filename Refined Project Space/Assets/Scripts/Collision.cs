@@ -7,27 +7,17 @@ public class Collision : MonoBehaviour
     private Click click;
     //public GameObject parent;
     public GameObject conntectPoint;
-    public bool mostRecent;
-    public GameObject placeholder;
     void Awake()
     { 
         click = conntectPoint.GetComponent<Click>();
     }
-    // Start is called before the first frame update
-    void Start()
+        private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //placeholder = conntectPoint.transform.GetChild(0).gameObject;
         if (conntectPoint.transform.childCount > 0)
-        {
-            //this.GetComponent<Collider2D>().enabled = false;
-            this.GetComponent<Destroy>().enabled = false;
-        }
+            {
+                Debug.Log("cannot place there");
+                Destroy(other.gameObject.transform.parent.gameObject);
+            }
     }
 
 }
