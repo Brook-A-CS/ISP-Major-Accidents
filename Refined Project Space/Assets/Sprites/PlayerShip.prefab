@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8cba0a2c157d33458aa232ac32cf174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 8
   rotSpeed: 180
 --- !u!114 &8143173740627862144
 MonoBehaviour:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d43b67d521702d41902a70f00fd9f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 5
   invulnPeriod: 0.5
 --- !u!114 &8143173740627862151
 MonoBehaviour:
