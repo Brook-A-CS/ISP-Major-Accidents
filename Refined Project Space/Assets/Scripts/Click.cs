@@ -6,10 +6,12 @@ public class Click : MonoBehaviour
 {
     private GameObject m_camera;
     private Transform connectionPoint;
-    private GameObject attachment;
+    public GameObject attachment;
     //gets var from global script 
     private ChooseAttachment chooseAttachment;
     private int attachIndex;
+
+    private GameObject? newAttachment;
 
     public bool placed;
 
@@ -29,6 +31,7 @@ public class Click : MonoBehaviour
         //0 = circle; 1 = rectangle
         attachment = GameObject.FindGameObjectsWithTag("Attachments")[attachIndex];
         switchAttachment();
+        CheckIfStillThere();
     }
 
 
@@ -58,6 +61,7 @@ public class Click : MonoBehaviour
         //0 is left click; 1 is right
         if (Input.GetMouseButtonDown(0)) 
         {
+            //the ball to place an attchment is still there, but hidden, so there needs to be a way to disable it
             if (!placed) 
             {
             connectionPoint = this.gameObject.transform;
@@ -66,13 +70,26 @@ public class Click : MonoBehaviour
             connectionPoint.Translate(Vector3.right * size/2);
             Vector3 connectionPointPosition = connectionPoint.position;
 
-            GameObject newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
+            newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
             newAttachment.transform.SetParent(connectionPoint);
 
             placed = true;
             }
 
+        }
+    }
+
+    private void CheckIfStillThere()
+    {
+        //Debug.Log(newAttachment);
+        float size = attachment.transform.localScale.x;
+
+        //if collisions activates, move connector back and allow new one to be placed
+        if (newAttachment == null && placed == true)
+        {
+            connectionPoint.Translate(Vector3.left * size/2);
+            placed = false;
         }
     }
 

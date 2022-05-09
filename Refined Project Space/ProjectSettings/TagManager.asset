@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Attachments
+  - ConnectionPoint
   layers:
   - Default
   - TransparentFX
