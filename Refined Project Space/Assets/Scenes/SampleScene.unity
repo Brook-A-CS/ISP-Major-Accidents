@@ -788,6 +788,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1418212932887725923, guid: 521dfc0de6487874d9ef86360a9f9e8f, type: 3}
+      propertyPath: m_TagString
+      value: Attachments
+      objectReference: {fileID: 0}
     - target: {fileID: 6422650569066696560, guid: 521dfc0de6487874d9ef86360a9f9e8f, type: 3}
       propertyPath: m_BodyType
       value: 1

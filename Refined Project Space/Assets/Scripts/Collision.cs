@@ -25,8 +25,12 @@ public class Collision : MonoBehaviour
         //placeholder = conntectPoint.transform.GetChild(0).gameObject;
         if (conntectPoint.transform.childCount > 0)
         {
+            //OnTriggerEnter2D cannot be enabled/disabled
+
             //this.GetComponent<Collider2D>().enabled = false;
-            this.GetComponent<Destroy>().enabled = false;
+            //this.GetComponent<Destroy>().enabled = false;
+
+            //Destroy(this.GetComponent<Destroy>());
         }
     }
 

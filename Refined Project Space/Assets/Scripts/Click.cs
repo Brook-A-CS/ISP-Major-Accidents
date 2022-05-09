@@ -39,14 +39,15 @@ public class Click : MonoBehaviour
         {
             case 1:
                 attachIndex = 0;
-                //Debug.Log("1");
+                Debug.Log("1");
                 break;
             case 2:
                 attachIndex = 1;
-                //Debug.Log("2");
+                Debug.Log("2");
                 break;
             case 3:
                 attachIndex = 2;
+                Debug.Log("3");
                 break;
             default:
                 break;
