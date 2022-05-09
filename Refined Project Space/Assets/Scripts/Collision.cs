@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    public Click click;
-    public GameObject parent;
-
+    private Click click;
+    //public GameObject parent;
+    public GameObject conntectPoint;
+    public bool mostRecent;
+    public GameObject placeholder;
     void Awake()
-    {
-        click = parent.GetComponent<Click>();
+    { 
+        click = conntectPoint.GetComponent<Click>();
     }
     // Start is called before the first frame update
     void Start()
@@ -20,15 +22,12 @@ public class Collision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (click.placed)
+        //placeholder = conntectPoint.transform.GetChild(0).gameObject;
+        if (conntectPoint.transform.childCount > 0)
         {
-            this.collider2D.enabled = false;
+            //this.GetComponent<Collider2D>().enabled = false;
+            this.GetComponent<Destroy>().enabled = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("hit bitch");
-        Destroy(other.gameObject.transform.parent.gameObject);
-    }
 }
