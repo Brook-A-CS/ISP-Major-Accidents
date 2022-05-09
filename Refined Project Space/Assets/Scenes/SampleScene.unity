@@ -720,6 +720,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4630311846795171530, guid: dd4363800ad93494b958c8d55a50fd28, type: 3}
+      propertyPath: m_TagString
+      value: ConnectionPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630311847427760799, guid: dd4363800ad93494b958c8d55a50fd28, type: 3}
+      propertyPath: m_TagString
+      value: ConnectionPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630311848197606567, guid: dd4363800ad93494b958c8d55a50fd28, type: 3}
+      propertyPath: m_TagString
+      value: ConnectionPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 4630311848391217265, guid: dd4363800ad93494b958c8d55a50fd28, type: 3}
       propertyPath: m_Name
       value: Cir Connector
