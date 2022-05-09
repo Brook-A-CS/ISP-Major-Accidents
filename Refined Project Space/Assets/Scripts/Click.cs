@@ -10,9 +10,9 @@ public class Click : MonoBehaviour
     //gets var from global script 
     private ChooseAttachment chooseAttachment;
     private int attachIndex;
-
+    #nullable enable
     private GameObject? newAttachment;
-
+    #nullable disable
     public bool placed;
 
     void Awake() 
@@ -41,11 +41,11 @@ public class Click : MonoBehaviour
         switch (chooseAttachment.equiped)
         {
             case 1:
-                attachIndex = 0;
+                attachIndex = 1;
                 //Debug.Log("1");
                 break;
             case 2:
-                attachIndex = 1;
+                attachIndex = 0;
                 //Debug.Log("2");
                 break;
             case 3:

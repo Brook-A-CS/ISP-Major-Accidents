@@ -7,7 +7,7 @@ public class Collision : MonoBehaviour
     private Click click;
     //public GameObject parent;
     public GameObject conntectPoint;
-    void Awake()
+    void Start()
     { 
         click = conntectPoint.GetComponent<Click>();
     }
@@ -15,12 +15,10 @@ public class Collision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //finds most recently placed object since thats the only one that will be destoryed
-        if (conntectPoint.transform.childCount > 0)
+        if (conntectPoint.transform.childCount > 0 && click.placed)
             {
                 Debug.Log("cannot place there");
                 Destroy(other.gameObject.transform.parent.gameObject);
-
-                //conntectPoint.transform.Translate(Vector3.left * click.attachment.transform.localScale.x/2);
 
             }
     }
