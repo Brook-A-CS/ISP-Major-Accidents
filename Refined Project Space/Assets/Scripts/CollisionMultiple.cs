@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CollisionMultiple : MonoBehaviour
 {
-    //public GameObject parent;
-    public GameObject[] conntectPoints;
-    public Click[] clicks;
+    #nullable enable
+    public GameObject[]? conntectPoints;
+    public Click[]? clicks;
+    #nullable disable
     
     private void OnTriggerEnter2D(Collider2D other)
     {

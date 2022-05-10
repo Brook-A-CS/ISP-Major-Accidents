@@ -9,7 +9,7 @@ public class Click : MonoBehaviour
     public GameObject attachment;
     //gets var from global script 
     private ChooseAttachment chooseAttachment;
-    private int attachIndex;
+
     #nullable enable
     private GameObject? newAttachment;
     #nullable disable
@@ -23,37 +23,13 @@ public class Click : MonoBehaviour
 
     void Start()
     {
+        attachment = chooseAttachment.equiped;
     }
 
     void Update() 
     {
-        //array pos key: 
-        //0 = circle; 1 = rectangle
-        attachment = GameObject.FindGameObjectsWithTag("Attachments")[attachIndex];
-        switchAttachment();
+        attachment = chooseAttachment.equiped;
         CheckIfStillThere();
-    }
-
-
-    private void switchAttachment()
-    {
-        //Debug.Log(chooseAttac hment.equiped);
-        switch (chooseAttachment.equiped)
-        {
-            case 1:
-                attachIndex = 1;
-                //Debug.Log("1");
-                break;
-            case 2:
-                attachIndex = 0;
-                //Debug.Log("2");
-                break;
-            case 3:
-                attachIndex = 2;
-                break;
-            default:
-                break;
-        }
     }
 
     private void OnMouseDown()
