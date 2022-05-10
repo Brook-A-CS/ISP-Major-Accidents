@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageHandler : MonoBehaviour {
-
+public class EnemyDamageHandler : MonoBehaviour
+{
     public int health = 1;
 
 	public float invulnPeriod = 0;
 	float invulnTimer = 0;
 	int correctLayer;
-
 	SpriteRenderer spriteRend;
+    public int xpPerKill;
 
+    // Start is called before the first frame update
 	void Start() {
 		correctLayer = gameObject.layer;
 
@@ -61,7 +62,9 @@ public class DamageHandler : MonoBehaviour {
 	}
 
 	void Die() {
+		xpPerKill = 20;
 		Destroy(gameObject);
-	}
+		XPManager.instance.AddXP(xpPerKill);
 
+	}
 }
