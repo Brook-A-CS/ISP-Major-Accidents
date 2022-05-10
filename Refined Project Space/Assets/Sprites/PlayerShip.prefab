@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2235321384684691224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5009123450949014364}
+  - component: {fileID: 1032813920212738314}
+  m_Layer: 0
+  m_Name: Enemy Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5009123450949014364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235321384684691224}
+  m_LocalRotation: {x: -0, y: -0, z: 0.026176924, w: 0.99965733}
+  m_LocalPosition: {x: 0.0018417313, y: -0.034825746, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4473713855043933609}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1032813920212738314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235321384684691224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a2fc439529493419193faae1e77f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 7604953049626776454, guid: ddf1b32539348ab499ddbdfc700fad5b, type: 3}
 --- !u!1 &4473713853423808571
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +225,6 @@ GameObject:
   - component: {fileID: 4473713855043933605}
   - component: {fileID: 4473713855043933604}
   - component: {fileID: 4473713855043933607}
-  - component: {fileID: 4473713855043933606}
   m_Layer: 6
   m_Name: PlayerShip
   m_TagString: Player
@@ -204,6 +247,7 @@ Transform:
   - {fileID: 4473713853423808568}
   - {fileID: 4473713855214019035}
   - {fileID: 4473713855181191739}
+  - {fileID: 5009123450949014364}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3}
@@ -449,20 +493,6 @@ PolygonCollider2D:
       - {x: 0.48, y: -0.49249998}
       - {x: 0.475, y: -0.4975}
       - {x: 0.48, y: -0.4975}
---- !u!114 &4473713855043933606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4473713855043933601}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bbee0bb9cc79af4eae6e3b1dfab561a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectionPoint: {fileID: 0}
-  attachment: {fileID: 3231285584977340699, guid: 521dfc0de6487874d9ef86360a9f9e8f, type: 3}
 --- !u!1 &4473713855181191738
 GameObject:
   m_ObjectHideFlags: 0

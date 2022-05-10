@@ -62,6 +62,8 @@ public class DamageHandler : MonoBehaviour {
 
 	void Die() {
 		Destroy(gameObject);
+		XPManager.instance.AddXP(10);
+
 	}
 
 }
