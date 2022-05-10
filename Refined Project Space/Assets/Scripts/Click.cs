@@ -38,21 +38,25 @@ public class Click : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) 
         {
             //the ball to place an attchment is still there, but hidden, so there needs to be a way to disable it
-            if (!placed) 
+            int level = XPManager.instance.level;
+            Debug.Log(level);
+            if (!placed && level > 0) 
             {
-            connectionPoint = this.gameObject.transform;
-            float size = attachment.transform.localScale.x;
-        
-            connectionPoint.Translate(Vector3.right * size/2);
-            Vector3 connectionPointPosition = connectionPoint.position;
 
-            newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
+                connectionPoint = this.gameObject.transform;
+                float size = attachment.transform.localScale.x;
+            
+                connectionPoint.Translate(Vector3.right * size/2);
+                Vector3 connectionPointPosition = connectionPoint.position;
 
-            newAttachment.transform.SetParent(connectionPoint);
+                newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
-            placed = true;
+                newAttachment.transform.SetParent(connectionPoint);
 
-            Debug.Log(XPManager.instance.level);
+                placed = true;
+
+                XPManager.instance.level--;
+
             }
 
         }
@@ -68,6 +72,7 @@ public class Click : MonoBehaviour
         {
             connectionPoint.Translate(Vector3.left * size/2);
             placed = false;
+            XPManager.instance.level++;
         }
     }
 
