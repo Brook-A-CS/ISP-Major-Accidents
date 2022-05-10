@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamFollow : MonoBehaviour {
 
-    void Update() {
+    void LateUpdate() {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player != null) {
             Vector3 targPos = player.transform.position;
