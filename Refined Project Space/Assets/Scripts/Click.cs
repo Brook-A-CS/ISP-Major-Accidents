@@ -51,6 +51,8 @@ public class Click : MonoBehaviour
             newAttachment.transform.SetParent(connectionPoint);
 
             placed = true;
+
+            Debug.Log(XPManager.instance.level);
             }
 
         }
