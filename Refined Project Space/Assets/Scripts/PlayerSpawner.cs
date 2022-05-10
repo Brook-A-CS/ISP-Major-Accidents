@@ -8,19 +8,25 @@ public class PlayerSpawner : MonoBehaviour {
     public GameObject playerPrefab;
 	GameObject playerInstance;
 
-	public int numLives = 3111;
+	public int numLives = 1;
 
 	float respawnTimer;
 
 	// Use this for initialization
 	void Start () {
 		SpawnPlayer();
+
+		HealthUIManager.instance.lives = numLives;
+		HealthUIManager.instance.livesText.text = HealthUIManager.instance.lives.ToString();
 	}
 
 	void SpawnPlayer() {
 		numLives--;
 		respawnTimer = 1;
 		playerInstance = (GameObject)Instantiate(playerPrefab, transform.position, Quaternion.identity);
+
+		HealthUIManager.instance.lives = numLives;
+		HealthUIManager.instance.livesText.text = HealthUIManager.instance.lives.ToString();
 	}
 	
 	// Update is called once per frame
@@ -52,7 +58,7 @@ public class PlayerSpawner : MonoBehaviour {
 
 	void OnGUI() {
 		if(numLives > 0 || playerInstance!= null) {
-			GUI.Label( new Rect(0, 0, 100, 50), "Lives Left: " + numLives);
+			//GUI.Label( new Rect(0, 0, 100, 50), "Lives Left: " + numLives);
 		}
 		else {
 			GUI.Label( new Rect( Screen.width/2 - 35 , Screen.height/2 - 25, 100, 50), "Game Over!");

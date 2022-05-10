@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1738179269200712995}
   - component: {fileID: 5896581064210094898}
   - component: {fileID: 7778388519734178421}
+  - component: {fileID: -8675591329069927581}
   m_Layer: 9
   m_Name: Turret
   m_TagString: Attachments
@@ -204,9 +205,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7729967404281639277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00ecce60436a8fe43a8a7b582b5a0ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunSpot: {fileID: 7635718916415126135}
+  bulletPrefab: {fileID: 7319092158467611863, guid: 77e2884c8cd99124584d88d9ef172c3f, type: 3}
+  fireDelay: 0.25
+--- !u!114 &-8675591329069927581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729967404281639277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea64279b06c8998448cbea6dce458d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GunSpot: {fileID: 7635718916415126135}

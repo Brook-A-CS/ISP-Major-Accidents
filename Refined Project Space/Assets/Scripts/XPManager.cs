@@ -50,10 +50,4 @@ public class XPManager : MonoBehaviour
         currentXPtext.text = currentXP.ToString();
     }
 
-    void update()
-    {
-        currentXPtext.text = currentXP.ToString();
-        targetXPtext.text = targetXP.ToString();
-        levelText.text = level.ToString();
-    }
 }

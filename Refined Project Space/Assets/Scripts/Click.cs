@@ -39,7 +39,7 @@ public class Click : MonoBehaviour
         {
             //the ball to place an attchment is still there, but hidden, so there needs to be a way to disable it
             int level = XPManager.instance.level;
-            Debug.Log(level);
+            //Debug.Log(level);
             if (!placed && level > 0) 
             {
 
@@ -56,6 +56,7 @@ public class Click : MonoBehaviour
                 placed = true;
 
                 XPManager.instance.level--;
+                XPManager.instance.levelText.text = XPManager.instance.level.ToString();
 
             }
 
@@ -73,6 +74,7 @@ public class Click : MonoBehaviour
             connectionPoint.Translate(Vector3.left * size/2);
             placed = false;
             XPManager.instance.level++;
+            XPManager.instance.levelText.text = XPManager.instance.level.ToString();
         }
     }
 
