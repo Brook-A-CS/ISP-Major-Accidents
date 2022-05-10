@@ -6,10 +6,14 @@ public class Click : MonoBehaviour
 {
     private GameObject m_camera;
     private Transform connectionPoint;
-    private GameObject attachment;
+    public GameObject attachment;
     //gets var from global script 
     private ChooseAttachment chooseAttachment;
-    private int attachIndex;
+
+    #nullable enable
+    private GameObject? newAttachment;
+    #nullable disable
+    public bool placed;
 
     void Awake() 
     {
@@ -19,41 +23,13 @@ public class Click : MonoBehaviour
 
     void Start()
     {
+        attachment = chooseAttachment.equiped;
     }
 
     void Update() 
     {
-        //array pos key: 
-        //0 = circle; 1 = rectangle
-        attachment = GameObject.FindGameObjectsWithTag("Attachments")[attachIndex];
-        switchAttachment();
-    }
-
-    // void LateUpdate()
-    // {
-    //     if (placed)
-    //     {
-    //     Debug.Log(placed);
-    //     Destroy(this.gameObject);
-    //     }
-    // }
-
-    private void switchAttachment()
-    {
-        //Debug.Log(chooseAttac hment.equiped);
-        switch (chooseAttachment.equiped)
-        {
-            case 1:
-                attachIndex = 0;
-                //Debug.Log("1");
-                break;
-            case 2:
-                attachIndex = 1;
-                //Debug.Log("2");
-                break;
-            default:
-                break;
-        }
+        attachment = chooseAttachment.equiped;
+        CheckIfStillThere();
     }
 
     private void OnMouseDown()
@@ -61,19 +37,45 @@ public class Click : MonoBehaviour
         //0 is left click; 1 is right
         if (Input.GetMouseButtonDown(0)) 
         {
-            connectionPoint = this.gameObject.transform;
-            float size = attachment.transform.localScale.x;
-        
-            connectionPoint.Translate(Vector3.right * size/2);
-            Vector3 connectionPointPosition = connectionPoint.position;
+            //the ball to place an attchment is still there, but hidden, so there needs to be a way to disable it
+            int level = XPManager.instance.level;
+            Debug.Log(level);
+            if (!placed && level > 0) 
+            {
 
-            GameObject newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
+                connectionPoint = this.gameObject.transform;
+                float size = attachment.transform.localScale.x;
+            
+                connectionPoint.Translate(Vector3.right * size/2);
+                Vector3 connectionPointPosition = connectionPoint.position;
 
-            newAttachment.transform.SetParent(connectionPoint);
+                newAttachment = Instantiate(attachment, connectionPointPosition, connectionPoint.rotation);
 
-            //placed = true;
+                newAttachment.transform.SetParent(connectionPoint);
+
+                placed = true;
+
+                XPManager.instance.level--;
+
+            }
 
         }
     }
+
+    private void CheckIfStillThere()
+    {
+        //Debug.Log(newAttachment);
+        float size = attachment.transform.localScale.x;
+
+        //if collisions activates, move connector back and allow new one to be placed
+        if (newAttachment == null && placed == true)
+        {
+            connectionPoint.Translate(Vector3.left * size/2);
+            placed = false;
+            XPManager.instance.level++;
+        }
+    }
+
+    
 
 }

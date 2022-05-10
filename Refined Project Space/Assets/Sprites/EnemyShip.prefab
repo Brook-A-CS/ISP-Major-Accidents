@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7604953049626776461}
   - component: {fileID: 1089081107}
   - component: {fileID: -8561405431270470330}
+  - component: {fileID: 4023520540028756155}
   m_Layer: 7
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7604953049626776454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d43b67d521702d41902a70f00fd9f66, type: 3}
   m_Name: 
@@ -375,3 +376,18 @@ MonoBehaviour:
   GunSpot: {fileID: 3157723416652603575}
   bulletPrefab: {fileID: 5995644332521011262, guid: 7a35af8112b852a459a87bd14ff14aac, type: 3}
   fireDelay: 1.5
+--- !u!114 &4023520540028756155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604953049626776454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80561b3211191b249a5c766e218930a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  invulnPeriod: 0
+  xpPerKill: 0
