@@ -20,6 +20,10 @@ public class ChooseAttachment : MonoBehaviour
         {
             equiped = 2;
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            equiped = 3;
+        }
         //Debug.Log(equiped);
     }
 }
